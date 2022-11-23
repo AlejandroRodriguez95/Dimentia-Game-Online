@@ -720,6 +720,7 @@ MonoBehaviour:
   availableHighlight: {fileID: 4932179059624723278, guid: f8e11c87395d6994b8156cdb25236d2b, type: 3}
   unavailableHighlight: {fileID: 3632262151610862832, guid: 89af756b88e850b4ea70b80df7e1641f, type: 3}
   selector: {fileID: 3092647852132241131, guid: cd4cda6e78a92614fa69364d1c99d81f, type: 3}
+  moveIndicator: {fileID: 8707651765444613199, guid: 4092e7133d260574eb800a9dcf7af6a9, type: 3}
   tower1: {fileID: 4213350133358839672, guid: acf1f272d0c743d41930844517ce736f, type: 3}
   tower2: {fileID: 2608031031065234069, guid: 8f1f7dc3cdb6ff04194b26eab269bb7b, type: 3}
   pillow1: {fileID: 5001959262650464491, guid: 387b7b212ae592e4e8f0e5d49f99c199, type: 3}
@@ -1586,7 +1587,7 @@ Transform:
   m_GameObject: {fileID: 1428943815}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 348365157}

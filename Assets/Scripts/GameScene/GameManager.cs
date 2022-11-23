@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject selectorInstance;
     [SerializeField] private GameObject selectedPiece;
     [SerializeField] private GameObject selectedShadow;
+    private GameObject indicatorInstance;
     private List<GameObject> highlightList;
     private SelectorLogic selectorComponent;
     private int playerModifier;
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject availableHighlight;
     [SerializeField] private GameObject unavailableHighlight;
     [SerializeField] private GameObject selector;
+    [SerializeField] private GameObject moveIndicator;
 
     [Header("Pieces")]
     [SerializeField] private GameObject tower1;
@@ -622,6 +624,15 @@ public class GameManager : MonoBehaviourPunCallbacks
                         break;
                 }
 
+                // piece was successfully selected
+
+
+                // Spawn line indicator
+
+
+
+
+                // Place shadow on spot, advance turn stage
                 currentShadowPosition = currentSelectorPosition;
                 e_turnStage = ETurnStage.MovePlayer;
             }
@@ -806,8 +817,14 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (!selectedShadow.activeSelf)
             selectedShadow.SetActive(true);
 
+        if (indicatorInstance != null)
+            Destroy(indicatorInstance);
+
         var val1 = destination.Item1;
         var val2 = destination.Item2;
+
+        var currentPos = piece.transform.position;
+
 
         destination.Item1 = (short)Mathf.Clamp(val1, 0, xSize - 1);
         destination.Item2 = (short)Mathf.Clamp(val2, 0, ySize - 1);
@@ -827,6 +844,17 @@ public class GameManager : MonoBehaviourPunCallbacks
         CurrentShadowPosition = destination;
 
         piece.transform.position = newPos;
+
+        //var moveIndicatorSize = Vector3.Distance(newPos, currentPos);
+
+
+        //indicatorInstance = Instantiate(moveIndicator, currentPos, default);
+
+        //indicatorInstance.transform.localScale = new Vector3(0.3f, moveIndicatorSize, 1);
+        //indicatorInstance.transform.rotation = Quaternion.Euler(90, 90, 0);
+
+
+
     }
 
 
